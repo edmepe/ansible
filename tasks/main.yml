@@ -1,0 +1,36 @@
+#---
+#- name: Update all clients
+#  hosts: all
+#  connection: local
+#  gather_facts: yes
+#  become: false
+#  tasks:
+#   - name: All IPv4 addresses
+#     debug: msg="{{ ansible_all_ipv4_addresses }}"
+#    - name: Default IPv4 addresses
+#      debug: msg="{{ ansible_default_ipv4.address }}"
+#
+#---
+#- hosts: clients
+#  became: yes
+#  tasks: 
+#    - name: ensure apache is installed and up to date
+#      apt: name=apache2 state=latest
+#    - name: write the apache config file
+#      copy: src=000-default.conf dest=/etc/apache2/sites-available/000-default.conf
+#      notify: 
+#      - restart apache2
+#    - name: apache is running (and enable it at boot)
+#      service: name=apache2 state=started enabled=yes
+#  handlers:
+#    - name: restart apache2
+#      service: name=apache2 state=restarted
+---
+- include: tarefa1.yml
+  when: incluir_tarefa1
+
+- include: tarefa2.yml
+  when: incluir_tarefa2
+
+- include: tarefa3.yml
+  when: incluir_tarefa3
