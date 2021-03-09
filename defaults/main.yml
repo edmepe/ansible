@@ -1,5 +1,6 @@
 ---
 # defaults file for projeto
 incluir_tarefa1: true
-incluir_tarefa2: false
+incluir_tarefa2: true
 incluir_tarefa3: true
+incluir_tarefa4: true

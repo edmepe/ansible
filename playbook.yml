@@ -1,9 +1,6 @@
 ---
-- name: Update all clients
-  hosts: all
-  connection: local
-  gather_facts: yes
-  become: false
+- hosts: clients
+  become: yes
   roles: 
     - { role: projeto }
   

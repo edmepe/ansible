@@ -34,3 +34,6 @@
 
 - include: tarefa3.yml
   when: incluir_tarefa3
+
+- include: tarefa4.yml
+  when: incluir_tarefa4
